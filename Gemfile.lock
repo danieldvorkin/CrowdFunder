@@ -41,30 +41,23 @@ GEM
       execjs
       json
     bcrypt (3.1.10)
+    best_errors (0.1.4)
+      better_errors (~> 2.1)
+      binding_of_caller (~> 0.7)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
-<<<<<<< HEAD
-=======
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
->>>>>>> 44a2d47ef3405d6d0561cdc13cd6c731f2756a72
     bootstrap-sass (3.3.4.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
     builder (3.2.2)
     byebug (4.0.5)
       columnize (= 0.9.0)
-<<<<<<< HEAD
     cocoon (1.2.6)
-<<<<<<< HEAD
-=======
     coderay (1.1.0)
->>>>>>> imran
-=======
-    coderay (1.1.0)
->>>>>>> 44a2d47ef3405d6d0561cdc13cd6c731f2756a72
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -73,6 +66,7 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     columnize (0.9.0)
+    debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.5.2)
     globalid (0.3.5)
@@ -101,6 +95,11 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-byebug (3.1.0)
+      byebug (~> 4.0)
+      pry (~> 0.10)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
     rack (1.6.1)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -144,7 +143,7 @@ GEM
     spring (1.3.6)
     sprockets (3.1.0)
       rack (~> 1.0)
-    sprockets-rails (2.3.0)
+    sprockets-rails (2.3.1)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
@@ -166,18 +165,14 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bcrypt (~> 3.1.7)
-  better_errors
-<<<<<<< HEAD
-=======
-  binding_of_caller
->>>>>>> 44a2d47ef3405d6d0561cdc13cd6c731f2756a72
+  best_errors
   bootstrap-sass (~> 3.3.4)
-  byebug
   cocoon
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
-  pry
+  pry-byebug
+  pry-rails
   rails (= 4.2.1)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
