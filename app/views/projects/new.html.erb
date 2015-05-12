@@ -1,21 +1,24 @@
-<h1>Create a new project</h1>
+<div class="text-center">
+	<h1>Create a new project</h1>
 
-<%= form_for @project do |f| %>
-	<div class="field">
-		<%= f.label :name %>
-		<%= f.text_field :name %>
-	</div>
-	<div class="field">
-		<%= f.label :description %>
-		<%= f.text_area :description %>
-	</div>
+	<%= form_for @project do |f| %>
+		<form>
+			<div>
+				<%= f.label :name %>
+				<%= f.text_field :name %>
+			</div>
+			<div>
+				<%= f.label :description %>
+				<%= f.text_area :description %>
+			</div>
 
-	<h2>Rewards</h2>
-		<%= f.fields_for :rewards do |rewards_form| %>
+			<h2>Rewards</h2>
+				<%= f.fields_for :rewards do |rewards_form| %>
 
-		<% end %>
+				<% end %>
 
-		
-	<%= f.submit %>
-	<%= link_to 'Home', projects_url %>
-<% end %>
+				
+			<%= f.submit %>
+		</form>
+	<% end %>
+</div>
