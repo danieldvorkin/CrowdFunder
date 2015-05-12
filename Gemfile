@@ -38,7 +38,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'pry'
-gem 'better_errors'
+
 gem 'binding_of_caller'
 
 group :development, :test do
@@ -46,10 +46,9 @@ group :development, :test do
   gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
-<<<<<<< HEAD
+
   gem 'better_errors'
-=======
->>>>>>> 44a2d47ef3405d6d0561cdc13cd6c731f2756a72
+
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
