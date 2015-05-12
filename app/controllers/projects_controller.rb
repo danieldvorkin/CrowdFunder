@@ -17,6 +17,10 @@ class ProjectsController < ApplicationController
   	end
   end
 
+  def show
+    # Nothing yet.....
+  end
+
   private
   def project_params
   	params.require(:project).permit(:name, :description, :funding_goal, :start_at, :end_at)
