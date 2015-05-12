@@ -5,3 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+categories = Category.create!([
+  {name: "Technology"},
+  {name: "Art"},
+  {name: "Music"},
+  {name: "Sports"},
+  {name: "Film"},
+])
+
+20.times do |n|
+  Project.create!(name: "Cool project #{n}", category: categories.sample)
+end
+
+User.create!(first_name: "Testy", last_name: "McTest", email: "test@test.test", password: "test")
