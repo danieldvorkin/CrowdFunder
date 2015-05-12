@@ -12,10 +12,13 @@
 
 			<h2>Rewards</h2>
 				<%= f.fields_for :rewards do |rewards_form| %>
-
+					<%= render 'reward_fields', f: rewards_form %>
 				<% end %>
 
-				
+				<div class="links">
+      		<%= link_to_add_association 'add reward', f, :rewards %>
+    		</div>
+
 			<%= f.submit %>
 		</form>
 	<% end %>

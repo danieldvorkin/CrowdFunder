@@ -2,7 +2,7 @@
 
 <% @project.each do |p| %>
 	<div class="thumbnail col-lg-4 text-center">
-		<h4><u>Name:</u> <%= p.name %></h4>
-		<p><u>Description:</u> <%= p.description %></p>
+		<h4><u><%= p.name %></u></h4>
+		<button type="button"><%= link_to 'Show Details', "/projects/#{p.id}" %></button>
 	</div>
 <% end %>

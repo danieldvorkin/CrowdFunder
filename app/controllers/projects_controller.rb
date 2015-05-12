@@ -18,11 +18,11 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    # Nothing yet.....
+    @project = Project.find(params[:id])
   end
 
   private
   def project_params
-  	params.require(:project).permit(:name, :description, :funding_goal, :start_at, :end_at)
+  	params.require(:project).permit(:name, :description, :funding_goal, :start_at, :end_at, rewards_attributes: [:id, :description, :amount, :_destroy])
   end
 end
