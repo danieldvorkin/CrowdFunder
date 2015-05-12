@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   
   resources :rewards
   
-  resources :user
+  resources :users
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
