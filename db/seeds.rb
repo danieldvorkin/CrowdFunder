@@ -23,11 +23,14 @@ categories = Category.create!([
      image: Faker::Avatar.image,
      category: categories.sample
  )
- Reward.create!(
+end
+proj = Project.last
+20.times do |n|
+ proj.rewards.create!(
    title: Faker::Company.name,
    description: Faker::Lorem.sentence,
    amount: rand(0..10000),
-   project_id: rand(1...20)
+   project_id: proj.id
    )
  print '|'
 end
