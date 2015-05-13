@@ -7,11 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 categories = Category.create!([
-  {name: "Technology"},
-  {name: "Art"},
-  {name: "Music"},
-  {name: "Sports"},
-  {name: "Film"},
+ {name: "Technology"},
+ {name: "Art"},
+ {name: "Music"},
+ {name: "Sports"},
+ {name: "Film"},
 ])
 
 Project.destroy_all
@@ -36,3 +36,5 @@ Reward.destroy_all
     print '|'
   end
 end
+
+
