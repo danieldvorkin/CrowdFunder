@@ -6,8 +6,8 @@ class PledgesController < ApplicationController
 
 	def create
     @project = load_project
-    @pledge = @product.pledges.build(pledge_params)
-    @pledge.user = current_user
+    @pledge = @project.pledges.build(pledge_params)
+    @pledge.user_id = current_user.id
 
     respond_to do |format|
       if @pledge.save
@@ -16,14 +16,14 @@ class PledgesController < ApplicationController
         end
         format.js
       else
-        format.html { render 'projects/show', alert: 'There was an error' }
+        format.html { render 'rootpath', alert: 'There was an error' }
       end
     end
   end
 
 private
   def pledge_params
-    params.require(:pledge).permit(:reward_id)
+    {reward_id: params[:reward_id]}
   end
 
   def load_project
