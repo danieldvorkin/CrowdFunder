@@ -16,7 +16,7 @@ class PledgesController < ApplicationController
         end
         format.js
       else
-        format.html { render 'pledges/show', alert: 'There was an error' }
+        format.html { render 'rootpath', alert: 'There was an error' }
       end
     end
   end
