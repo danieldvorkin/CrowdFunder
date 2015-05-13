@@ -15,7 +15,12 @@ categories = Category.create!([
 ])
 
 20.times do |n|
-  Project.create!(name: "Cool project #{n}", category: categories.sample)
+  Project.create!(
+  	name: "Cool project #{n}",
+  	description: Faker::Lorem.sentence,
+  	funding_goal: rand(0..10000000),
+  	image: Faker::Avatar.image,
+  	category: categories.sample)
 end
 
 User.create!(first_name: "Testy", last_name: "McTest", email: "test@test.test", password: "test")
