@@ -1,8 +1,12 @@
 <h1 style="text-align:center;">All Projects</h1>
-
+<% if current_user %>
 <% @project.each do |p| %>
 	<div class="thumbnail col-lg-4 text-center">
 		<h4><u><%= p.name %></u></h4>
+		<%= image_tag p.image.url(:med) %>
 		<button type="button"><%= link_to 'Show Details', "/projects/#{p.id}" %></button>
 	</div>
+<% end %>
+<% else %>
+	<h1 class="text-center">Please log in to view projects</h1>
 <% end %>

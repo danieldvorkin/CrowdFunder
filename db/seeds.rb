@@ -15,6 +15,7 @@ categories = Category.create!([
 ])
 
 20.times do |n|
+
  Project.create!(
      name: Faker::Commerce.product_name,
      description: Faker::Lorem.sentence,
@@ -30,3 +31,8 @@ categories = Category.create!([
    )
  print '|'
 end
+
+
+
+User.create!(first_name: "Testy", last_name: "McTest", email: "test@test.test", password: "test")
+
