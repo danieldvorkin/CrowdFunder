@@ -18,7 +18,9 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem 'autoprefixer-rails'
 
 gem 'cocoon'
+gem "paperclip", "~> 4.2"
 
+gem 'faker'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
