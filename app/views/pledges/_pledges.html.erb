@@ -1,1 +1,2 @@
-<%= button_to 'Make Donation', :controller => 'pledges', :action => 'create', :method => 'post' %>
+<%= button_to 'Make Donation', project_pledges_path(@project, :reward_id => reward.id),  :method => 'post' %>
+
