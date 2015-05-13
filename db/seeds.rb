@@ -18,4 +18,5 @@ categories = Category.create!([
   Project.create!(name: "Cool project #{n}", category: categories.sample)
 end
 
+
 User.create!(first_name: "Testy", last_name: "McTest", email: "test@test.test", password: "test")
