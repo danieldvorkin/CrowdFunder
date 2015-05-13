@@ -24,6 +24,7 @@ Reward.destroy_all
   	image: Faker::Avatar.image,
   	category: categories.sample
   )
+  print '/'
   proj = Project.last
 
   3.times do |i|  
@@ -33,8 +34,7 @@ Reward.destroy_all
       amount: rand(0..10000),
       project_id: rand(1...20)
       )
-    print '|'
+    print '-'
   end
 end
-
 
