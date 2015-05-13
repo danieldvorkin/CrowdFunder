@@ -60,9 +60,19 @@
 
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
+
 	</nav><br><br>
 
-<%= yield %>
+  <% if flash[:notice] %>
+      <p id="notice"><%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:alert] %>
+      <p id="alert"><%= flash[:alert] %></p>
+    <% end %>
+    <br>
+    <br>
+    <%= yield %>
+
 
 </body>
 </html>
