@@ -4,5 +4,6 @@
 	<h2><%= @project.name %></h2>
 	<%= image_tag @project.image.url(:med) %>
 	<p><%= @project.description %></p>
+	<p>Funding Goal: <%= @project.funding_goal %></p>
 	<p><%= render @project.rewards %></p>
 </div>
