@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       redirect_to root_path :notice => "Logged in!"
     else
       flash.now[:alert] = "Invalid email or password"
-      alert("Enter something to login dude");
+      render 'projects/index'
     end
   end
 
