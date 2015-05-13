@@ -7,16 +7,26 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 categories = Category.create!([
-  {name: "Technology"},
-  {name: "Art"},
-  {name: "Music"},
-  {name: "Sports"},
-  {name: "Film"},
+ {name: "Technology"},
+ {name: "Art"},
+ {name: "Music"},
+ {name: "Sports"},
+ {name: "Film"},
 ])
 
 20.times do |n|
-  Project.create!(name: "Cool project #{n}", category: categories.sample)
+ Project.create!(
+     name: Faker::Commerce.product_name,
+     description: Faker::Lorem.sentence,
+     funding_goal: rand(0..10000000),
+     image: Faker::Avatar.image,
+     category: categories.sample
+ )
+ Reward.create!(
+   title: Faker::Company.name,
+   description: Faker::Lorem.sentence,
+   amount: rand(0..10000),
+   project_id: rand(1...20)
+   )
+ print '|'
 end
-
-
-User.create!(first_name: "Testy", last_name: "McTest", email: "test@test.test", password: "test")
