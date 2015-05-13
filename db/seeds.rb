@@ -14,28 +14,27 @@ categories = Category.create!([
  {name: "Film"},
 ])
 
+Project.destroy_all
+Reward.destroy_all
 20.times do |n|
 
- Project.create!(
-     name: Faker::Commerce.product_name,
-     description: Faker::Lorem.sentence,
-     funding_goal: rand(0..10000000),
-     image: Faker::Avatar.image,
-     category: categories.sample
- )
+  Project.create!(
+  	name: Faker::Commerce.product_name,
+  	description: Faker::Lorem.sentence,
+  	funding_goal: rand(0..10000000),
+  	image: Faker::Avatar.image,
+  	category: categories.sample
+  )
+  proj = Project.last
+
+  3.times do |i|  
+    proj.rewards.create!(
+      title: Faker::Company.name,
+      description: Faker::Lorem.sentence,
+      amount: rand(0..10000),
+      project_id: rand(1...20)
+      )
+    print '|'
+  end
 end
-proj = Project.last
-20.times do |n|
- proj.rewards.create!(
-   title: Faker::Company.name,
-   description: Faker::Lorem.sentence,
-   amount: rand(0..10000),
-   project_id: proj.id
-   )
- print '|'
-end
-
-
-
-User.create!(first_name: "Testy", last_name: "McTest", email: "test@test.test", password: "test")
 
