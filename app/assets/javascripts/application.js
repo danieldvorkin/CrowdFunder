@@ -29,7 +29,6 @@ $(document).ready(function(){
 				confirmButtonText: "Continue" 
 			});
 		}
-		$(this).unbind(e).refresh();
 	});	
 });
 

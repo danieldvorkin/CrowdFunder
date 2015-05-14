@@ -7,7 +7,7 @@
 					<%= f.text_field :name, placeholder: "Project Name" %>
 				</div><br>
 				
-				<div style="margin-left: 45%;">
+				<div style="margin-left: 40%;">
 					<%= f.file_field :image %>
 				</div>
 				
@@ -21,11 +21,12 @@
 
 				<h2>Rewards</h2>
 				<%= f.fields_for :rewards do |rewards_form| %>
-					<%= render 'reward_fields', f: rewards_form %>
+					<% 8.times do |n| %>
+						<%= render 'reward_fields', f: rewards_form %>
+					<% end %>
 				<% end %>
 
-				<div class="links">
-      		<%= link_to_add_association 'add reward', f, :rewards %>
+				<div class="">
 					<%= f.submit %>
 				</div>
 

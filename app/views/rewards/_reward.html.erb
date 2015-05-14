@@ -1,6 +1,12 @@
-<div class="col-lg-4 well text-center">
-	<%= reward.title %>
-	<%= reward.description %><br>
-	<p>$<%= reward.amount %></p>
-	<span class="pledge-button"><%= render 'pledges/pledges', :reward => reward %></span>
+<div class="col-lg-6 text-center">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4><%= reward.title %></h4>
+		</div>
+		<div class="panel-body">
+			<%= reward.description %>
+			<p>Pledge: $<%= reward.amount %></p>
+		</div>
+		<span class="pledge-button"><%= render 'pledges/pledges', :reward => reward %></span><br>
+	</div>
 </div>
