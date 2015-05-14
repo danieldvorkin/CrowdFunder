@@ -1,4 +1,4 @@
-<div class="container well">
+<div class="text-center container well">
 	<% if current_user %>
 		<h1 class="text-center">Create a new project</h1>
 		<%= form_for @project, html: { multipart: true } do |f| %>
@@ -7,7 +7,7 @@
 					<%= f.text_field :name, placeholder: "Project Name" %>
 				</div><br>
 				
-				<div>
+				<div style="margin-left: 40%;">
 					<%= f.file_field :image %>
 				</div>
 				
@@ -21,11 +21,12 @@
 
 				<h2>Rewards</h2>
 				<%= f.fields_for :rewards do |rewards_form| %>
-					<%= render 'reward_fields', f: rewards_form %>
+					<% 8.times do |n| %>
+						<%= render 'reward_fields', f: rewards_form %>
+					<% end %>
 				<% end %>
 
-				<div class="links">
-      		<%= link_to_add_association 'add reward', f, :rewards %>
+				<div class="">
 					<%= f.submit %>
 				</div>
 

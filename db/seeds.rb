@@ -5,6 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Category.destroy_all
+Pledge.destroy_all
+Project.destroy_all
+Reward.destroy_all
 
 categories = Category.create!([
  {name: "Technology"},
@@ -14,10 +18,8 @@ categories = Category.create!([
  {name: "Film"},
 ])
 
-Project.destroy_all
-Reward.destroy_all
-20.times do |n|
-  Project.create!(
+40.times do |n|
+  proj = Project.create!(
   	name: Faker::Commerce.product_name,
   	description: Faker::Lorem.sentence,
   	funding_goal: rand(0..10000000),
@@ -25,9 +27,8 @@ Reward.destroy_all
   	category: categories.sample
   )
   print '/'
-  proj = Project.last
 
-  3.times do |i|  
+  6.times do |i|  
     proj.rewards.create!(
       title: Faker::Company.name,
       description: Faker::Lorem.sentence,

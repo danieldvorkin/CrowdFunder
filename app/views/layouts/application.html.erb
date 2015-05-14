@@ -2,16 +2,12 @@
 <html>
 <head>
   <title>CrowdFunder</title>
-  <script src="../../assets/javascripts/sweetalert.min.js"></script>
-  <script src="../../assets/javascripts/sweetalert-dev.js"></script>
-  <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/sweetalert.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-	<nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
 	  <div class="container-fluid">
 	    <!-- Brand and toggle get grouped for better mobile display -->
 	    <div class="navbar-header">
@@ -39,9 +35,6 @@
                 <p class="navbar-text navbar-right">
                   <%= link_to "Log out", session_path("current"), :method => :delete %>
                 </p>
-                <p class="navbar-text navbar-right">
-                  <%= link_to "Profile", user_path(current_user.id) {link_to('Profile', user_path(current_user.id), class: 'active')} %>
-                </p>
             </p>
           <% else %>
             <%= form_tag sessions_path, method: "POST", class: "navbar-form navbar-right" do |f| %>
@@ -55,6 +48,20 @@
               <a href="/users/new">Sign Up</a>
             <% end %>
           <% end %>
+
+          <% if flash[:notice] %>
+            <script>
+              $(document).ready(function(){
+                swal({ 
+                  title: "Congrats!",   
+                  text: '<%= j flash[:notice] %>',
+                  type: "success",   
+                  confirmButtonText: "Continue" 
+                });
+              });
+            </script>
+          <% end %>
+
           <% if flash[:alert] %>
             <p class="navbar-text navbar-left" id="alert">
               <%= flash[:alert] %>

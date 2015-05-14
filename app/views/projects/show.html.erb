@@ -5,7 +5,7 @@
   <p id="alert"><%= flash[:alert] %></p>
 <% end %>
 
-<div class="well text-center" style="height:750px;">
+<div class="well clearfix text-center">
 	<h1>Details Page</h1><hr />
 	
 	<div class="thumbnail" style="background-color: grey;">
@@ -20,7 +20,8 @@
 		</div>
 		<div class="panel-body">
 			<%= @project.description %><br>
-			Funding Goal: $<%= @project.funding_goal / 100 %>
+			Funding Goal: <%= number_to_currency @project.funding_goal %><br>
+			Remaining Amount: <%= number_to_currency @project.amount_remaining %>
 		</div>
 	</div>
 	

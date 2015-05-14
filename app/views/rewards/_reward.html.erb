@@ -1,6 +1,15 @@
-<div class="col-lg-4 well text-center">
-	<%= reward.title %>
-	<%= reward.description %><br>
-	<p>$<%= reward.amount %></p>
-	<span class="pledge-button"><%= render 'pledges/pledges', :reward => reward %></span>
+<div class="col-lg-6 text-center">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4><%= reward.title %></h4>
+		</div>
+		<div class="panel-body">
+			<%= reward.description %>
+			<p>Pledge: <%= number_to_currency reward.amount %></p>
+		</div>
+		<span class="pledge-button">
+			<%= button_to 'Make Donation', project_pledges_path(@project, :reward_id => reward.id), :method => 'post' %>
+		</span>
+		<br>
+	</div>
 </div>

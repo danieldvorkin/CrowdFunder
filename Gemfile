@@ -43,6 +43,7 @@ gem 'bcrypt', '~> 3.1.7'
 group :development, :test do
   gem 'pry-byebug'
 	gem 'pry-rails'
+	gem 'quiet_assets'
   gem 'best_errors'
   gem 'spring'
 end
