@@ -16,3 +16,10 @@
 //= require bootstrap-sprockets
 //= require cocoon
 //= require_tree .
+
+$(document).ready(function(){
+	$(".pledge-button").on('click', function(){
+		alert("Thank you for your pledge");
+	});	
+});
+
