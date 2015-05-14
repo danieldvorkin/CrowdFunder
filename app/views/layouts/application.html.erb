@@ -2,9 +2,6 @@
 <html>
 <head>
   <title>CrowdFunder</title>
-  <script src="../../assets/javascripts/sweetalert.min.js"></script>
-  <script src="../../assets/javascripts/sweetalert-dev.js"></script>
-  <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/sweetalert.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -51,6 +48,20 @@
               <a href="/users/new">Sign Up</a>
             <% end %>
           <% end %>
+
+          <% if flash[:notice] %>
+            <script>
+              $(document).ready(function(){
+                swal({ 
+                  title: "Congrats!",   
+                  text: '<%= j flash[:notice] %>',
+                  type: "success",   
+                  confirmButtonText: "Continue" 
+                });
+              });
+            </script>
+          <% end %>
+
           <% if flash[:alert] %>
             <p class="navbar-text navbar-left" id="alert">
               <%= flash[:alert] %>

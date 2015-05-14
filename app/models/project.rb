@@ -10,4 +10,22 @@ class Project < ActiveRecord::Base
 		large: "600x600" 
 	}
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
+	def amount_remaining
+		# VERSION 1
+		# sum = 0
+
+		# pledges.each do |pledge|
+		# 	sum += pledge.contribution
+		# end
+
+		# VERSION 2a
+		# sum = pledges.inject(0) { |sum, pledge| sum + pledge.contribution }
+
+		# VERSION 2b
+		# return funding_goal - pledges.inject(0) { |sum, pledge| sum + pledge.contribution }
+
+		# VERSION 3
+		return funding_goal - pledges.sum(:contribution)
+	end
 end

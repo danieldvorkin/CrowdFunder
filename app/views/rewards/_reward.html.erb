@@ -5,8 +5,11 @@
 		</div>
 		<div class="panel-body">
 			<%= reward.description %>
-			<p>Pledge: $<%= reward.amount %></p>
+			<p>Pledge: <%= number_to_currency reward.amount %></p>
 		</div>
-		<span class="pledge-button"><%= render 'pledges/pledges', :reward => reward %></span><br>
+		<span class="pledge-button">
+			<%= button_to 'Make Donation', project_pledges_path(@project, :reward_id => reward.id), :method => 'post' %>
+		</span>
+		<br>
 	</div>
 </div>
