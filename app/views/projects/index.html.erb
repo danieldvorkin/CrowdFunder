@@ -3,7 +3,7 @@
 	<% @project.each do |p| %>
 		<div class="thumbnail col-lg-4 text-center">
 			<h4><u><%= p.name %></u></h4>
-			<%= image_tag p.image.url(:med) %>
+			<div class="center"><%= image_tag p.image.url(:small) %></div><hr />
 			<button type="button"><%= link_to 'Show Details', "/projects/#{p.id}" %></button>
 		</div>
 	<% end %>
@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container well">
        Example row of columns
       <div class="row">
         <div class="col-md-4">

@@ -12,7 +12,7 @@ class PledgesController < ApplicationController
     respond_to do |format|
       if @pledge.save
         format.html do
-          redirect_to project_path(@project.id), notice: 'Pledge created' 
+          redirect_to project_path(@project.id)
         end
         format.js
       else
