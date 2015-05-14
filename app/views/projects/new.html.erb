@@ -1,4 +1,4 @@
-<div class="container well">
+<div class="text-center container well">
 	<% if current_user %>
 		<h1 class="text-center">Create a new project</h1>
 		<%= form_for @project, html: { multipart: true } do |f| %>
@@ -7,7 +7,7 @@
 					<%= f.text_field :name, placeholder: "Project Name" %>
 				</div><br>
 				
-				<div>
+				<div style="margin-left: 45%;">
 					<%= f.file_field :image %>
 				</div>
 				
