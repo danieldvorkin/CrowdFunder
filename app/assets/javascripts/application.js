@@ -18,8 +18,18 @@
 //= require_tree .
 
 $(document).ready(function(){
-	$(".pledge-button").on('click', function(){
-		alert("Thank you for your pledge");
+	$(".pledge-button").on('click', function(e) {
+		done = false;
+		e.preventDefault();
+		if(done === false){
+			swal({   
+				title: "Congrats!",   
+				text: "Thank you for pledging",   
+				type: "success",   
+				confirmButtonText: "Continue" 
+			});
+		}
+		$(this).unbind(e).refresh();
 	});	
 });
 

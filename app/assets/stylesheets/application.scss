@@ -18,7 +18,9 @@
 @import "bootstrap";
 
 body {
-	background-image: url("http://wallpoper.com/images/00/39/19/92/outer-space_00391992.jpg")
+	background-image: url("http://wallpoper.com/images/00/39/19/92/outer-space_00391992.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 .thumbnail {

@@ -2,6 +2,9 @@
 <html>
 <head>
   <title>CrowdFunder</title>
+  <script src="../../assets/javascripts/sweetalert.min.js"></script>
+  <script src="../../assets/javascripts/sweetalert-dev.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/sweetalert.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -18,12 +21,13 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="/projects">CrowdFunder</a>
+	      <a class="navbar-brand" href="#">CrowdFunder</a>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
+          <li><%= link_to 'Home', "/projects" %></li>
 	        <li><%= link_to 'Add New', "/projects/new" %></li>
 	      </ul>
 
