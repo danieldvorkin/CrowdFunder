@@ -22,7 +22,7 @@ categories = Category.create!([
   proj = Project.create!(
   	name: Faker::Commerce.product_name,
   	description: Faker::Lorem.sentence,
-  	funding_goal: rand(0..10000000),
+  	funding_goal: rand(0..100000),
   	image: Faker::Avatar.image,
   	category: categories.sample
   )
@@ -32,7 +32,7 @@ categories = Category.create!([
     proj.rewards.create!(
       title: Faker::Company.name,
       description: Faker::Lorem.sentence,
-      amount: rand(0..10000),
+      amount: rand(0..1000),
       project_id: rand(1...20)
       )
     print '-'
