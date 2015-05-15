@@ -7,6 +7,11 @@
 			</div>
 			<div class="panel-body">
 				<div class="center"><%= image_tag p.image.url(:small) %></div><hr />
+				<div class="progress">
+  				<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <%= p.progress %>%">
+    				<%= p.progress.to_i %>% Funded
+  				</div>
+				</div>
 				<button type="button"><%= link_to 'Show Details', "/projects/#{p.id}" %></button>
 			</div>
 		</div>

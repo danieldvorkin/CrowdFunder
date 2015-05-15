@@ -27,6 +27,14 @@ class Project < ActiveRecord::Base
 		# return funding_goal - pledges.inject(0) { |sum, pledge| sum + pledge.contribution }
 
 		# VERSION 3
-		return funding_goal - pledges.sum(:contribution)
+		funding_goal - total_raised
 	end
+
+	def total_raised
+		pledges.sum(:contribution)
+	end
+
+	def progress
+		(total_raised / funding_goal.to_f) * 100
+	end 
 end

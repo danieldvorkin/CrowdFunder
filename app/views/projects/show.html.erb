@@ -22,6 +22,11 @@
 			<%= @project.description %><br>
 			Funding Goal: <%= number_to_currency @project.funding_goal %><br>
 			Remaining Amount: <%= number_to_currency @project.amount_remaining %>
+			<div class="progress">
+  			<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <%= @project.progress %>%">
+    			<%= @project.progress.to_i %>% Complete
+  			</div>
+			</div>
 		</div>
 	</div>
 	
