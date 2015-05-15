@@ -8,7 +8,10 @@
 			<p>Pledge: <%= number_to_currency reward.amount %></p>
 		</div>
 		<span class="pledge-button">
-			<%= button_to 'Make Donation', project_pledges_path(@project, :reward_id => reward.id), :method => 'post' %>
+			<%= button_to 'Make Donation', 
+				project_pledges_path(@project, :reward_id => reward.id), 
+				:method => 'post',
+				class: "btn btn-default" %>
 		</span>
 		<br>
 	</div>

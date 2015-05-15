@@ -12,7 +12,7 @@
     				<%= p.progress.to_i %>% Funded
   				</div>
 				</div>
-				<button type="button"><%= link_to 'Show Details', "/projects/#{p.id}" %></button>
+				<%= link_to 'Show Details', "/projects/#{p.id}", class: "btn btn-default" %>
 			</div>
 		</div>
 	<% end %>
@@ -38,7 +38,7 @@
         <div class="col-md-4">
           <h2>Get Started Today</h2>
           <p>To start actually using this application, you need to sign up. It's very straight forward and simple to understand, and i promise no request for credit cards will be present during the signup process.</p>
-          <button type="button" class="btn btn-default" href="users/new">Get Started</button>
+          <%= link_to 'Get Started', "/users/new", class: "btn btn-default" %>
        </div>
         <div class="col-md-4">
           <h2>Awesomeness</h2>
